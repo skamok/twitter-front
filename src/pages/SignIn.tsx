@@ -80,9 +80,41 @@ export const useStylesSignIn = makeStyles((theme) => ({
 }));
 
 function SignIn() {
+  const classes = useStylesSignIn();
   return (
-    <div>
-      SIGNIN
+    <div className={classes.wrapper}>
+      <section className={classes.blueSide}>
+        <TwitterIcon color="primary" className={classes.blueSideBigIcon}/>
+        <ul className={classes.blueSideListInfo}>
+          <li>
+            <Typography variant="h6" className={classes.blueSideListInfoItem}>
+              <SearchIcon className={classes.blueSideListInfoIcon}/>
+              Читайте о том, что вам интересно
+            </Typography>
+          </li>
+          <li>
+            <Typography variant="h6" className={classes.blueSideListInfoItem}>
+              <PeopleIcon className={classes.blueSideListInfoIcon}/>            
+              Узнайте, о чем говорят в мире.
+            </Typography>
+          </li>
+          <li>
+            <Typography variant="h6" className={classes.blueSideListInfoItem}>
+              <MessageIcon className={classes.blueSideListInfoIcon}/>
+              Присоединяйтесь к общению
+            </Typography>
+          </li>
+        </ul>
+      </section>
+      <section className={classes.loginSide}>
+        <div className={classes.loginSideWrapper}>
+        <TwitterIcon color="primary" className={classes.loginSideTwitterIcon}></TwitterIcon>
+        <Typography variant="h4" className={classes.loginSideTitle}>Узнайте что происходит в мире прямо сейчас</Typography>
+        <Typography><b>Присоединяйтесь к твиттеру прямо сейчас</b></Typography><br/>
+        <Button variant="contained" color="primary" fullWidth style={{marginBottom: 20}}>Зарегистрироваться</Button>
+        <Button variant="outlined" color="primary" fullWidth>Войти</Button>
+        </div>        
+      </section>
     </div>
   )
 }
